@@ -1,0 +1,110 @@
+OpenROAD b16bda7e82721d10566ff7e2b68f1ff0be9f9e38 
+Features included (+) or not (-): +Charts +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+define_corners Typical
+read_liberty -corner Typical /home/pikachu/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Using 1e-12 for capacitance...
+Using 1e+03 for resistance...
+Using 1e-09 for time...
+Using 1e+00 for voltage...
+Using 1e-03 for current...
+Using 1e-09 for power...
+Using 1e-06 for distance...
+[INFO]: Reading ODB at '/openlane/designs/lab5_v1/runs/RUN_2025.05.25_12.28.52/results/routing/top_module.odb'…
+Reading design constraints file at '/openlane/designs/lab5_v1/constraints/top_pnr.sdc'…
+Net: _172_
+  Pin: _331_/A1 (sky130_fd_sc_hd__mux2_1)
+    Layer: met5
+      Partial area ratio: 1095.11
+      Required ratio:    0.00 (Gate area) 
+      Partial area ratio: 1673.14
+      Required ratio: 2771.60 (Side area) 
+      Cumulative area ratio: 1212.59
+      Required ratio:    0.00 (Cumulative area) 
+      Cumulative area ratio: 2306.72
+      Required ratio:    0.00 (Cumulative side area) 
+
+    Layer: met4
+      Partial area ratio:   97.86
+      Required ratio:    0.00 (Gate area) 
+      Partial area ratio:  525.71
+      Required ratio:  400.00 (Side area) (VIOLATED)
+      Cumulative area ratio:  117.48
+      Required ratio:    0.00 (Cumulative area) 
+      Cumulative area ratio:  633.58
+      Required ratio:    0.00 (Cumulative side area) 
+
+    Layer: met3
+      Partial area ratio:   15.50
+      Required ratio:    0.00 (Gate area) 
+      Partial area ratio:   86.48
+      Required ratio:  400.00 (Side area) 
+      Cumulative area ratio:   19.62
+      Required ratio:    0.00 (Cumulative area) 
+      Cumulative area ratio:  107.87
+      Required ratio:    0.00 (Cumulative side area) 
+
+    Layer: met2
+      Partial area ratio:    4.12
+      Required ratio:    0.00 (Gate area) 
+      Partial area ratio:   21.39
+      Required ratio:  400.00 (Side area) 
+      Cumulative area ratio:    4.12
+      Required ratio:    0.00 (Cumulative area) 
+      Cumulative area ratio:   21.39
+      Required ratio:    0.00 (Cumulative side area) 
+
+    Layer: met1
+      Partial area ratio:    0.00
+      Required ratio:    0.00 (Gate area) 
+      Partial area ratio:    0.00
+      Required ratio:  400.00 (Side area) 
+      Cumulative area ratio:    0.00
+      Required ratio:    0.00 (Cumulative area) 
+      Cumulative area ratio:    0.00
+      Required ratio:    0.00 (Cumulative side area) 
+
+    Layer: li1
+      Partial area ratio:    0.00
+      Required ratio:    0.00 (Gate area) 
+      Partial area ratio:    0.00
+      Required ratio:   75.00 (Side area) 
+      Cumulative area ratio:    0.00
+      Required ratio:    0.00 (Cumulative area) 
+      Cumulative area ratio:    0.00
+      Required ratio:    0.00 (Cumulative side area) 
+
+    Via: M4M5_PR
+      Partial area ratio:    5.08
+      Required ratio:    6.00 (Gate area) 
+      Cumulative area ratio:    6.12
+      Required ratio:    0.00 (Cumulative area) 
+
+    Via: M3M4_PR
+      Partial area ratio:    0.32
+      Required ratio:    6.00 (Gate area) 
+      Cumulative area ratio:    1.04
+      Required ratio:    0.00 (Cumulative area) 
+
+    Via: M2M3_PR
+      Partial area ratio:    0.32
+      Required ratio:    6.00 (Gate area) 
+      Cumulative area ratio:    0.73
+      Required ratio:    0.00 (Cumulative area) 
+
+    Via: M1M2_PR
+      Partial area ratio:    0.18
+      Required ratio:    6.00 (Gate area) 
+      Cumulative area ratio:    0.41
+      Required ratio:    0.00 (Cumulative area) 
+
+    Via: L1M1_PR_MR
+      Partial area ratio:    0.23
+      Required ratio:    3.00 (Gate area) 
+      Cumulative area ratio:    0.23
+      Required ratio:    0.00 (Cumulative area) 
+
+
+[INFO ANT-0002] Found 1 net violations.
+[INFO ANT-0001] Found 1 pin violations.

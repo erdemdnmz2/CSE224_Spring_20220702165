@@ -1,0 +1,38 @@
+digraph "TopZeroToFive" {
+label="TopZeroToFive";
+rankdir="LR";
+remincross=true;
+n4 [ shape=diamond, label="count", color="black", fontcolor="black" ];
+n5 [ shape=diamond, label="slow_clk", color="black", fontcolor="black" ];
+n6 [ shape=diamond, label="div_cntr", color="black", fontcolor="black" ];
+n7 [ shape=octagon, label="an", color="black", fontcolor="black" ];
+n8 [ shape=octagon, label="seg", color="black", fontcolor="black" ];
+n9 [ shape=octagon, label="btnC", color="black", fontcolor="black" ];
+n10 [ shape=octagon, label="clk", color="black", fontcolor="black" ];
+c12 [ shape=record, label="{{<p11> bin}|u_seg\nSevenSegDecoder|{<p8> seg}}",  ];
+c14 [ shape=record, label="{{<p10> clk|<p13> rst}|u_cnt\nZeroToFiveCounter|{<p4> count}}",  ];
+v0 [ label="1" ];
+c18 [ shape=record, label="{{<p15> A|<p16> B}|$2\n$add|{<p17> Y}}",  ];
+p1 [shape=box, style=rounded, label="PROC $3\n/openlane/designs/TopZeroToFive/src/TopZeroToFive.v:8.16-8.28", ];
+x3 [ shape=record, style=rounded, label="<s0> 19:0 - 19:0 ", color="black", fontcolor="black" ];
+p2 [shape=box, style=rounded, label="PROC $1\n/openlane/designs/TopZeroToFive/src/TopZeroToFive.v:9.5-9.52", ];
+x4 [ shape=record, style=rounded, label="<s0> 19:19 - 0:0 ", color="black", fontcolor="black" ];
+v5 [ label="8'11111110" ];
+x6 [shape=point, ];
+n10:e -> p2:w [color="black", fontcolor="black", label=""];
+c18:p17:e -> x3:s0:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+c14:p4:e -> n4:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+n4:e -> c12:p11:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+x4:e -> n5:w [color="black", fontcolor="black", label=""];
+n5:e -> c14:p10:w [color="black", fontcolor="black", label=""];
+p1:e -> n6:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+p2:e -> n6:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+n6:e -> c18:p15:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+n6:e -> x4:s0:w [color="black", fontcolor="black", label=""];
+x6:e -> n7:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+c12:p8:e -> n8:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+n9:e -> c14:p13:w [color="black", fontcolor="black", label=""];
+v0:e -> c18:p16:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+v5:e -> x6:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+x3:e -> p2:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+}

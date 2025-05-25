@@ -1,0 +1,19 @@
+Design Name: TopZeroToFive
+Run Directory: /openlane/designs/TopZeroToFive/runs/RUN_2025.05.25_10.40.04
+----------------------------------------
+
+Magic DRC Summary:
+Source: /openlane/designs/TopZeroToFive/runs/RUN_2025.05.25_10.40.04/reports/signoff/drc.rpt
+Total Magic DRC violations is 0
+----------------------------------------
+
+LVS Summary:
+Source: /openlane/designs/TopZeroToFive/runs/RUN_2025.05.25_10.40.04/logs/signoff/37-TopZeroToFive.lef.lvs.log
+Number of nets: 127                        |Number of nets: 127                        
+Design is LVS clean.
+----------------------------------------
+
+Antenna Summary:
+Source: /openlane/designs/TopZeroToFive/runs/RUN_2025.05.25_10.40.04/logs/signoff/40-arc.log
+Pin violations: 0
+Net violations: 0

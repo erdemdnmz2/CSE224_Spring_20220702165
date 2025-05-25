@@ -1,0 +1,34 @@
+OpenROAD b16bda7e82721d10566ff7e2b68f1ff0be9f9e38 
+Features included (+) or not (-): +Charts +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+Top-level design name: top_module
+Block boundaries: 0 0 100000 100000
+Horizontal Tracks Origin: 340, Count: 147, Step: 680
+Vertical Tracks Origin: 230, Count: 217, Step: 460
+Placement details for the #E side
+Virtual pin count:  0
+Actual pin count:  11
+Total pin count:  11
+Tracks count:  74
+Tracks per pin:  6
+Used tracks count:  61
+Unused track count:  13
+Starting track index:  6
+Placement Map:
+[340, 1700, 3060, 4420, 5780, 7140, [91m8500[0m, 9860, 11220, 12580, 13940, 15300, [91m16660[0m, 18020, 19380, 20740, 22100, 23460, [91m24820[0m, 26180, 27540, 28900, 30260, 31620, [91m32980[0m, 34340, 35700, 37060, 38420, 39780, [91m41140[0m, 42500, 43860, 45220, 46580, 47940, [91m49300[0m, 50660, 52020, 53380, 54740, 56100, [91m57460[0m, 58820, 60180, 61540, 62900, 64260, [91m65620[0m, 66980, 68340, 69700, 71060, 72420, [91m73780[0m, 75140, 76500, 77860, 79220, 80580, [91m81940[0m, 83300, 84660, 86020, 87380, 88740, [91m90100[0m, 91460, 92820, 94180, 95540, 96900, 98260, 99620, ]
+Indices of used tracks: [6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66]
+---
+Placement details for the #W side
+Virtual pin count:  0
+Actual pin count:  3
+Total pin count:  3
+Tracks count:  74
+Tracks per pin:  24
+Used tracks count:  49
+Unused track count:  25
+Starting track index:  12
+Placement Map:
+[340, 1700, 3060, 4420, 5780, 7140, 8500, 9860, 11220, 12580, 13940, 15300, [91m16660[0m, 18020, 19380, 20740, 22100, 23460, 24820, 26180, 27540, 28900, 30260, 31620, 32980, 34340, 35700, 37060, 38420, 39780, 41140, 42500, 43860, 45220, 46580, 47940, [91m49300[0m, 50660, 52020, 53380, 54740, 56100, 57460, 58820, 60180, 61540, 62900, 64260, 65620, 66980, 68340, 69700, 71060, 72420, 73780, 75140, 76500, 77860, 79220, 80580, [91m81940[0m, 83300, 84660, 86020, 87380, 88740, 90100, 91460, 92820, 94180, 95540, 96900, 98260, 99620, ]
+Indices of used tracks: [12, 36, 60]
+---

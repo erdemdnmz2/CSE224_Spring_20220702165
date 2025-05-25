@@ -1,0 +1,985 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.38 (git sha1 543faed9c8c, clang++ 17.0.6 -fPIC -Os)
+
+[TCL: yosys -import] Command name collision: found pre-existing command `cd' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `eval' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `exec' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `read' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `trace' -> skip.
+
+1. Executing Liberty frontend: /home/pikachu/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Imported 428 cell types from liberty file.
+
+2. Executing Verilog-2005 frontend: /openlane/designs/TopZeroToFive/src/TopZeroToFive.v
+Parsing SystemVerilog input from `/openlane/designs/TopZeroToFive/src/TopZeroToFive.v' to AST representation.
+Storing AST representation for module `$abstract\TopZeroToFive'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: /openlane/designs/TopZeroToFive/src/SevenSegDecoder.v
+Parsing SystemVerilog input from `/openlane/designs/TopZeroToFive/src/SevenSegDecoder.v' to AST representation.
+Storing AST representation for module `$abstract\SevenSegDecoder'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: /openlane/designs/TopZeroToFive/src/ZeroToFiveCounter.v
+Parsing SystemVerilog input from `/openlane/designs/TopZeroToFive/src/ZeroToFiveCounter.v' to AST representation.
+Storing AST representation for module `$abstract\ZeroToFiveCounter'.
+Successfully finished Verilog frontend.
+
+5. Executing HIERARCHY pass (managing design hierarchy).
+
+6. Executing AST frontend in derive mode using pre-parsed AST for module `\TopZeroToFive'.
+Generating RTLIL representation for module `\TopZeroToFive'.
+
+6.1. Analyzing design hierarchy..
+Top module:  \TopZeroToFive
+
+6.2. Executing AST frontend in derive mode using pre-parsed AST for module `\SevenSegDecoder'.
+Generating RTLIL representation for module `\SevenSegDecoder'.
+
+6.3. Executing AST frontend in derive mode using pre-parsed AST for module `\ZeroToFiveCounter'.
+Generating RTLIL representation for module `\ZeroToFiveCounter'.
+
+6.4. Analyzing design hierarchy..
+Top module:  \TopZeroToFive
+Used module:     \SevenSegDecoder
+Used module:     \ZeroToFiveCounter
+
+6.5. Analyzing design hierarchy..
+Top module:  \TopZeroToFive
+Used module:     \SevenSegDecoder
+Used module:     \ZeroToFiveCounter
+Removing unused module `$abstract\ZeroToFiveCounter'.
+Removing unused module `$abstract\SevenSegDecoder'.
+Removing unused module `$abstract\TopZeroToFive'.
+Removed 3 unused modules.
+
+7. Generating Graphviz representation of design.
+Writing dot description to `/openlane/designs/TopZeroToFive/runs/RUN_2025.05.25_10.40.04/tmp/synthesis/hierarchy.dot'.
+Dumping module TopZeroToFive to page 1.
+Renaming module TopZeroToFive to TopZeroToFive.
+
+8. Executing TRIBUF pass.
+
+9. Executing HIERARCHY pass (managing design hierarchy).
+
+9.1. Analyzing design hierarchy..
+Top module:  \TopZeroToFive
+Used module:     \SevenSegDecoder
+Used module:     \ZeroToFiveCounter
+
+9.2. Analyzing design hierarchy..
+Top module:  \TopZeroToFive
+Used module:     \SevenSegDecoder
+Used module:     \ZeroToFiveCounter
+Removed 0 unused modules.
+
+10. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+11. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/openlane/designs/TopZeroToFive/src/SevenSegDecoder.v:5$4 in module SevenSegDecoder.
+Marked 2 switch rules as full_case in process $proc$/openlane/designs/TopZeroToFive/src/ZeroToFiveCounter.v:6$5 in module ZeroToFiveCounter.
+Removed a total of 0 dead cases.
+
+12. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 1 redundant assignment.
+Promoted 3 assignments to connections.
+
+13. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\TopZeroToFive.$proc$/openlane/designs/TopZeroToFive/src/TopZeroToFive.v:8$3'.
+  Set init value: \div_cntr = 20'00000000000000000000
+
+14. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst in `\ZeroToFiveCounter.$proc$/openlane/designs/TopZeroToFive/src/ZeroToFiveCounter.v:6$5'.
+
+15. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~2 debug messages>
+
+16. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\TopZeroToFive.$proc$/openlane/designs/TopZeroToFive/src/TopZeroToFive.v:8$3'.
+Creating decoders for process `\TopZeroToFive.$proc$/openlane/designs/TopZeroToFive/src/TopZeroToFive.v:9$1'.
+Creating decoders for process `\SevenSegDecoder.$proc$/openlane/designs/TopZeroToFive/src/SevenSegDecoder.v:5$4'.
+     1/1: $1\seg[6:0]
+Creating decoders for process `\ZeroToFiveCounter.$proc$/openlane/designs/TopZeroToFive/src/ZeroToFiveCounter.v:6$5'.
+     1/1: $0\count[3:0]
+
+17. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\SevenSegDecoder.\seg' from process `\SevenSegDecoder.$proc$/openlane/designs/TopZeroToFive/src/SevenSegDecoder.v:5$4'.
+
+18. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\TopZeroToFive.\div_cntr' using process `\TopZeroToFive.$proc$/openlane/designs/TopZeroToFive/src/TopZeroToFive.v:9$1'.
+  created $dff cell `$procdff$18' with positive edge clock.
+Creating register for signal `\ZeroToFiveCounter.\count' using process `\ZeroToFiveCounter.$proc$/openlane/designs/TopZeroToFive/src/ZeroToFiveCounter.v:6$5'.
+  created $adff cell `$procdff$19' with positive edge clock and positive level reset.
+
+19. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+20. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `TopZeroToFive.$proc$/openlane/designs/TopZeroToFive/src/TopZeroToFive.v:8$3'.
+Removing empty process `TopZeroToFive.$proc$/openlane/designs/TopZeroToFive/src/TopZeroToFive.v:9$1'.
+Found and cleaned up 1 empty switch in `\SevenSegDecoder.$proc$/openlane/designs/TopZeroToFive/src/SevenSegDecoder.v:5$4'.
+Removing empty process `SevenSegDecoder.$proc$/openlane/designs/TopZeroToFive/src/SevenSegDecoder.v:5$4'.
+Found and cleaned up 1 empty switch in `\ZeroToFiveCounter.$proc$/openlane/designs/TopZeroToFive/src/ZeroToFiveCounter.v:6$5'.
+Removing empty process `ZeroToFiveCounter.$proc$/openlane/designs/TopZeroToFive/src/ZeroToFiveCounter.v:6$5'.
+Cleaned up 2 empty switches.
+
+21. Executing CHECK pass (checking for obvious problems).
+Checking module TopZeroToFive...
+Checking module SevenSegDecoder...
+Checking module ZeroToFiveCounter...
+Found and reported 0 problems.
+
+22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module TopZeroToFive.
+Optimizing module SevenSegDecoder.
+<suppressed ~1 debug messages>
+Optimizing module ZeroToFiveCounter.
+
+23. Executing FLATTEN pass (flatten design).
+Deleting now unused module SevenSegDecoder.
+Deleting now unused module ZeroToFiveCounter.
+<suppressed ~2 debug messages>
+
+24. Executing OPT_EXPR pass (perform const folding).
+Optimizing module TopZeroToFive.
+
+25. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \TopZeroToFive..
+Removed 0 unused cells and 6 unused wires.
+<suppressed ~1 debug messages>
+
+26. Executing OPT pass (performing simple optimizations).
+
+26.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module TopZeroToFive.
+
+26.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\TopZeroToFive'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+26.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \TopZeroToFive..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~2 debug messages>
+
+26.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \TopZeroToFive.
+Performed a total of 0 changes.
+
+26.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\TopZeroToFive'.
+Removed a total of 0 cells.
+
+26.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+26.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \TopZeroToFive..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+26.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module TopZeroToFive.
+
+26.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+26.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \TopZeroToFive..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~2 debug messages>
+
+26.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \TopZeroToFive.
+Performed a total of 0 changes.
+
+26.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\TopZeroToFive'.
+Removed a total of 0 cells.
+
+26.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+26.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \TopZeroToFive..
+
+26.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module TopZeroToFive.
+
+26.16. Finished OPT passes. (There is nothing left to do.)
+
+27. Executing FSM pass (extract and optimize FSM).
+
+27.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+27.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+27.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+27.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \TopZeroToFive..
+
+27.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+27.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+27.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+27.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+28. Executing OPT pass (performing simple optimizations).
+
+28.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module TopZeroToFive.
+
+28.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\TopZeroToFive'.
+Removed a total of 0 cells.
+
+28.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \TopZeroToFive..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~2 debug messages>
+
+28.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \TopZeroToFive.
+Performed a total of 0 changes.
+
+28.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\TopZeroToFive'.
+Removed a total of 0 cells.
+
+28.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+28.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \TopZeroToFive..
+
+28.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module TopZeroToFive.
+
+28.9. Finished OPT passes. (There is nothing left to do.)
+
+29. Executing WREDUCE pass (reducing word size of cells).
+Removed top 31 bits (of 32) from port B of cell TopZeroToFive.$add$/openlane/designs/TopZeroToFive/src/TopZeroToFive.v:9$2 ($add).
+Removed top 12 bits (of 32) from port Y of cell TopZeroToFive.$add$/openlane/designs/TopZeroToFive/src/TopZeroToFive.v:9$2 ($add).
+Removed top 3 bits (of 4) from port B of cell TopZeroToFive.$flatten\u_cnt.$add$/openlane/designs/TopZeroToFive/src/ZeroToFiveCounter.v:12$7 ($add).
+Removed top 1 bits (of 4) from port B of cell TopZeroToFive.$flatten\u_cnt.$eq$/openlane/designs/TopZeroToFive/src/ZeroToFiveCounter.v:9$6 ($eq).
+Removed top 3 bits (of 4) from port B of cell TopZeroToFive.$flatten\u_seg.$procmux$13_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell TopZeroToFive.$flatten\u_seg.$procmux$12_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell TopZeroToFive.$flatten\u_seg.$procmux$11_CMP0 ($eq).
+
+30. Executing PEEPOPT pass (run peephole optimizers).
+
+31. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \TopZeroToFive..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+32. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module TopZeroToFive:
+  creating $macc model for $add$/openlane/designs/TopZeroToFive/src/TopZeroToFive.v:9$2 ($add).
+  creating $macc model for $flatten\u_cnt.$add$/openlane/designs/TopZeroToFive/src/ZeroToFiveCounter.v:12$7 ($add).
+  creating $alu model for $macc $flatten\u_cnt.$add$/openlane/designs/TopZeroToFive/src/ZeroToFiveCounter.v:12$7.
+  creating $alu model for $macc $add$/openlane/designs/TopZeroToFive/src/TopZeroToFive.v:9$2.
+  creating $alu cell for $add$/openlane/designs/TopZeroToFive/src/TopZeroToFive.v:9$2: $auto$alumacc.cc:485:replace_alu$20
+  creating $alu cell for $flatten\u_cnt.$add$/openlane/designs/TopZeroToFive/src/ZeroToFiveCounter.v:12$7: $auto$alumacc.cc:485:replace_alu$23
+  created 2 $alu and 0 $macc cells.
+
+33. Executing SHARE pass (SAT-based resource sharing).
+
+34. Executing OPT pass (performing simple optimizations).
+
+34.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module TopZeroToFive.
+
+34.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\TopZeroToFive'.
+Removed a total of 0 cells.
+
+34.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \TopZeroToFive..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~2 debug messages>
+
+34.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \TopZeroToFive.
+Performed a total of 0 changes.
+
+34.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\TopZeroToFive'.
+Removed a total of 0 cells.
+
+34.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+34.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \TopZeroToFive..
+
+34.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module TopZeroToFive.
+
+34.9. Finished OPT passes. (There is nothing left to do.)
+
+35. Executing MEMORY pass.
+
+35.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+35.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+35.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+35.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+35.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+35.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \TopZeroToFive..
+
+35.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+35.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+35.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \TopZeroToFive..
+
+35.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+36. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \TopZeroToFive..
+
+37. Executing OPT pass (performing simple optimizations).
+
+37.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module TopZeroToFive.
+
+37.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\TopZeroToFive'.
+Removed a total of 0 cells.
+
+37.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+37.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \TopZeroToFive..
+
+37.5. Finished fast OPT passes.
+
+38. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+39. Executing OPT pass (performing simple optimizations).
+
+39.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module TopZeroToFive.
+
+39.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\TopZeroToFive'.
+Removed a total of 0 cells.
+
+39.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \TopZeroToFive..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~2 debug messages>
+
+39.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \TopZeroToFive.
+    Consolidated identical input bits for $pmux cell $flatten\u_seg.$procmux$9:
+      Old ports: A=7'1111111, B=35'00000011001111001001000001101001100, Y=\seg
+      New ports: A=6'111111, B=30'000001001111010010000110001100, Y=\seg [5:0]
+      New connections: \seg [6] = \seg [3]
+  Optimizing cells in module \TopZeroToFive.
+Performed a total of 1 changes.
+
+39.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\TopZeroToFive'.
+Removed a total of 0 cells.
+
+39.6. Executing OPT_SHARE pass.
+
+39.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+39.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \TopZeroToFive..
+
+39.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module TopZeroToFive.
+
+39.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+39.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \TopZeroToFive..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~2 debug messages>
+
+39.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \TopZeroToFive.
+Performed a total of 0 changes.
+
+39.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\TopZeroToFive'.
+Removed a total of 0 cells.
+
+39.14. Executing OPT_SHARE pass.
+
+39.15. Executing OPT_DFF pass (perform DFF optimizations).
+
+39.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \TopZeroToFive..
+
+39.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module TopZeroToFive.
+
+39.18. Finished OPT passes. (There is nothing left to do.)
+
+40. Executing TECHMAP pass (map to technology primitives).
+
+40.1. Executing Verilog-2005 frontend: /nix/store/sx2v0i73mn1ih2z1nk61pm9n5gjgpidy-yosys/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nix/store/sx2v0i73mn1ih2z1nk61pm9n5gjgpidy-yosys/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+40.2. Continuing TECHMAP pass.
+Using template $paramod$32a7b7b86c07519b7537abc18e96f0331f97914d\_90_alu for cells of type $alu.
+Using template $paramod$ce0ec84be7047712840b0952f343ee9e63ef75d1\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $dff.
+Using extmapper simplemap for cells of type $adff.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $logic_not.
+Using template $paramod$90ef9d3919151a0ff7c15c5c14550fb560f421a1\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $and.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000000100 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $not.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000010100 for cells of type $lcu.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $or.
+No more expansions possible.
+<suppressed ~491 debug messages>
+
+41. Executing OPT pass (performing simple optimizations).
+
+41.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module TopZeroToFive.
+<suppressed ~200 debug messages>
+
+41.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\TopZeroToFive'.
+<suppressed ~39 debug messages>
+Removed a total of 13 cells.
+
+41.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+41.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \TopZeroToFive..
+Removed 25 unused cells and 166 unused wires.
+<suppressed ~26 debug messages>
+
+41.5. Finished fast OPT passes.
+
+42. Executing ABC pass (technology mapping using ABC).
+
+42.1. Extracting gate netlist of module `\TopZeroToFive' to `<abc-temp-dir>/input.blif'..
+Extracted 92 gates and 118 wires to a netlist network with 24 inputs and 30 outputs.
+
+42.1.1. Executing ABC.
+Running ABC command: "/nix/store/wq2q0njg3sx8wvj2akz7x1qxwyrv9xlr-yosys-abc/bin/abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+42.1.2. Re-integrating ABC results.
+ABC RESULTS:             ORNOT cells:        1
+ABC RESULTS:               AND cells:        1
+ABC RESULTS:               NOR cells:        3
+ABC RESULTS:               NOT cells:        1
+ABC RESULTS:              NAND cells:       10
+ABC RESULTS:                OR cells:       24
+ABC RESULTS:              XNOR cells:       10
+ABC RESULTS:            ANDNOT cells:       19
+ABC RESULTS:               XOR cells:       12
+ABC RESULTS:        internal signals:       64
+ABC RESULTS:           input signals:       24
+ABC RESULTS:          output signals:       30
+Removing temp directory.
+
+43. Executing OPT pass (performing simple optimizations).
+
+43.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module TopZeroToFive.
+
+43.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\TopZeroToFive'.
+Removed a total of 0 cells.
+
+43.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+43.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \TopZeroToFive..
+Removed 0 unused cells and 84 unused wires.
+<suppressed ~1 debug messages>
+
+43.5. Finished fast OPT passes.
+
+44. Executing HIERARCHY pass (managing design hierarchy).
+
+44.1. Analyzing design hierarchy..
+Top module:  \TopZeroToFive
+
+44.2. Analyzing design hierarchy..
+Top module:  \TopZeroToFive
+Removed 0 unused modules.
+
+45. Printing statistics.
+
+=== TopZeroToFive ===
+
+   Number of wires:                 69
+   Number of wire bits:            154
+   Number of public wires:          12
+   Number of public wire bits:      59
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                105
+     $_ANDNOT_                      19
+     $_AND_                          1
+     $_DFF_PP0_                      4
+     $_DFF_P_                       20
+     $_NAND_                        10
+     $_NOR_                          3
+     $_NOT_                          1
+     $_ORNOT_                        1
+     $_OR_                          24
+     $_XNOR_                        10
+     $_XOR_                         12
+
+46. Executing CHECK pass (checking for obvious problems).
+Checking module TopZeroToFive...
+Found and reported 0 problems.
+
+47. Generating Graphviz representation of design.
+Writing dot description to `/openlane/designs/TopZeroToFive/runs/RUN_2025.05.25_10.40.04/tmp/synthesis/post_techmap.dot'.
+Dumping module TopZeroToFive to page 1.
+
+48. Executing SHARE pass (SAT-based resource sharing).
+
+49. Executing OPT pass (performing simple optimizations).
+
+49.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module TopZeroToFive.
+
+49.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\TopZeroToFive'.
+Removed a total of 0 cells.
+
+49.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \TopZeroToFive..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+49.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \TopZeroToFive.
+Performed a total of 0 changes.
+
+49.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\TopZeroToFive'.
+Removed a total of 0 cells.
+
+49.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+49.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \TopZeroToFive..
+
+49.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module TopZeroToFive.
+
+49.9. Finished OPT passes. (There is nothing left to do.)
+
+50. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \TopZeroToFive..
+Removed 0 unused cells and 5 unused wires.
+<suppressed ~5 debug messages>
+
+51. Printing statistics.
+
+=== TopZeroToFive ===
+
+   Number of wires:                 64
+   Number of wire bits:            137
+   Number of public wires:           7
+   Number of public wire bits:      42
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                105
+     $_ANDNOT_                      19
+     $_AND_                          1
+     $_DFF_PP0_                      4
+     $_DFF_P_                       20
+     $_NAND_                        10
+     $_NOR_                          3
+     $_NOT_                          1
+     $_ORNOT_                        1
+     $_OR_                          24
+     $_XNOR_                        10
+     $_XOR_                         12
+
+mapping tbuf
+
+52. Executing TECHMAP pass (map to technology primitives).
+
+52.1. Executing Verilog-2005 frontend: /home/pikachu/.volare/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v
+Parsing Verilog input from `/home/pikachu/.volare/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_TBUF_'.
+Successfully finished Verilog frontend.
+
+52.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+53. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+54. Executing TECHMAP pass (map to technology primitives).
+
+54.1. Executing Verilog-2005 frontend: /home/pikachu/.volare/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v
+Parsing Verilog input from `/home/pikachu/.volare/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Successfully finished Verilog frontend.
+
+54.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+55. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+56. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell sky130_fd_sc_hd__dfxtp_2 (noninv, pins=3, area=21.27) is a direct match for cell type $_DFF_P_.
+  cell sky130_fd_sc_hd__dfrtp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN0_.
+  cell sky130_fd_sc_hd__dfstp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN1_.
+  cell sky130_fd_sc_hd__dfbbn_2 (noninv, pins=6, area=35.03) is a direct match for cell type $_DFFSR_NNN_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \sky130_fd_sc_hd__dfxtp_2 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    unmapped dff cell: $_DFF_NN0_
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sky130_fd_sc_hd__dfrtp_2 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    \sky130_fd_sc_hd__dfstp_2 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SET_B( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    \sky130_fd_sc_hd__dfbbn_2 _DFFSR_NNN_ (.CLK_N( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    unmapped dff cell: $_DFFSR_PNN_
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+56.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+Mapping DFF cells in module `\TopZeroToFive':
+  mapped 4 $_DFF_PN0_ cells to \sky130_fd_sc_hd__dfrtp_2 cells.
+  mapped 20 $_DFF_P_ cells to \sky130_fd_sc_hd__dfxtp_2 cells.
+
+57. Printing statistics.
+
+=== TopZeroToFive ===
+
+   Number of wires:                 68
+   Number of wire bits:            141
+   Number of public wires:           7
+   Number of public wire bits:      42
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                109
+     $_ANDNOT_                      19
+     $_AND_                          1
+     $_NAND_                        10
+     $_NOR_                          3
+     $_NOT_                          5
+     $_ORNOT_                        1
+     $_OR_                          24
+     $_XNOR_                        10
+     $_XOR_                         12
+     sky130_fd_sc_hd__dfrtp_2        4
+     sky130_fd_sc_hd__dfxtp_2       20
+
+[INFO]: USING STRATEGY AREA 0
+
+58. Executing ABC pass (technology mapping using ABC).
+
+58.1. Extracting gate netlist of module `\TopZeroToFive' to `/tmp/yosys-abc-6TSeUM/input.blif'..
+Extracted 85 gates and 110 wires to a netlist network with 25 inputs and 34 outputs.
+
+58.1.1. Executing ABC.
+Running ABC command: "/nix/store/wq2q0njg3sx8wvj2akz7x1qxwyrv9xlr-yosys-abc/bin/abc" -s -f /tmp/yosys-abc-6TSeUM/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-6TSeUM/abc.script".
+ABC: 
+ABC: + read_blif /tmp/yosys-abc-6TSeUM/input.blif 
+ABC: + read_lib -w /openlane/designs/TopZeroToFive/runs/RUN_2025.05.25_10.40.04/tmp/synthesis/trimmed.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.02 sec
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Library "sky130A_merged" from "/openlane/designs/TopZeroToFive/runs/RUN_2025.05.25_10.40.04/tmp/synthesis/trimmed.lib" has 175 cells (17 skipped: 14 seq; 3 tri-state; 0 no func; 0 dont_use).  Time =     0.04 sec
+ABC: Memory =    9.54 MB. Time =     0.04 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + read_constr -v /openlane/designs/TopZeroToFive/runs/RUN_2025.05.25_10.40.04/tmp/synthesis/synthesis.sdc 
+ABC: Setting driving cell to be "sky130_fd_sc_hd__inv_2".
+ABC: Setting output load to be 33.442001.
+ABC: + read_constr /openlane/designs/TopZeroToFive/runs/RUN_2025.05.25_10.40.04/tmp/synthesis/synthesis.sdc 
+ABC: + fx 
+ABC: + mfs 
+ABC: + strash 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + retime -D -D 10000 -M 5 
+ABC: + scleanup 
+ABC: Error: The network is combinational.
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + fraig_restore 
+ABC: + amap -m -Q 0.1 -F 20 -A 20 -C 5000 
+ABC: + retime -D -D 10000 
+ABC: + &get -n 
+ABC: + &st 
+ABC: + &dch 
+ABC: + &nf 
+ABC: + &put 
+ABC: + buffer -N 10 -S 750.0 
+ABC: + upsize -D 10000 
+ABC: Current delay (1249.04 ps) does not exceed the target delay (10000.00 ps). Upsizing is not performed.
+ABC: + dnsize -D 10000 
+ABC: + stime -p 
+ABC: WireLoad = "none"  Gates =     69 ( 21.7 %)   Cap = 17.9 ff (  4.0 %)   Area =      605.58 ( 78.3 %)   Delay =  1436.42 ps  ( 11.6 %)               
+ABC: Path  0 --       7 : 0    3 pi                      A =   0.00  Df =  43.9  -24.5 ps  S =  66.5 ps  Cin =  0.0 ff  Cout =  13.1 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --      84 : 4    1 sky130_fd_sc_hd__and4_2 A =  10.01  Df = 247.9  -26.0 ps  S =  47.4 ps  Cin =  1.5 ff  Cout =   2.2 ff  Cmax = 300.3 ff  G =  138  
+ABC: Path  2 --      85 : 1    7 sky130_fd_sc_hd__buf_1  A =   3.75  Df = 475.6  -95.5 ps  S = 256.3 ps  Cin =  2.1 ff  Cout =  21.2 ff  Cmax = 130.0 ff  G =  972  
+ABC: Path  3 --     115 : 4    5 sky130_fd_sc_hd__and4_2 A =  10.01  Df = 806.8 -179.5 ps  S = 127.5 ps  Cin =  1.5 ff  Cout =  18.7 ff  Cmax = 300.3 ff  G = 1178  
+ABC: Path  4 --     123 : 4    1 sky130_fd_sc_hd__and4_2 A =  10.01  Df =1066.6 -183.0 ps  S =  79.7 ps  Cin =  1.5 ff  Cout =   8.5 ff  Cmax = 300.3 ff  G =  537  
+ABC: Path  5 --     124 : 2    1 sky130_fd_sc_hd__xor2_2 A =  16.27  Df =1436.4 -343.6 ps  S = 428.7 ps  Cin =  8.6 ff  Cout =  33.4 ff  Cmax = 130.0 ff  G =  390  
+ABC: Start-point = pi6 (\div_cntr [2]).  End-point = po29 ($auto$alumacc.cc:485:replace_alu$20.Y [19]).
+ABC: + print_stats -m 
+ABC: netlist                       : i/o =   25/   34  lat =    0  nd =    69  edge =    165  area =605.65  delay = 6.00  lev = 6
+ABC: + write_blif /tmp/yosys-abc-6TSeUM/output.blif 
+
+58.1.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__o31ai_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or3_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a211o_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nand2_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or2_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a31o_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and2b_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nor2_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__and3_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__o21ba_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__nand3_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a21o_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__and2_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__buf_1 cells:        7
+ABC RESULTS:   sky130_fd_sc_hd__xnor2_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__and4_2 cells:        8
+ABC RESULTS:   sky130_fd_sc_hd__xor2_2 cells:        8
+ABC RESULTS:   sky130_fd_sc_hd__inv_2 cells:        8
+ABC RESULTS:        internal signals:       51
+ABC RESULTS:           input signals:       25
+ABC RESULTS:          output signals:       34
+Removing temp directory.
+
+59. Executing SETUNDEF pass (replace undef values with defined constants).
+
+60. Executing HILOMAP pass (mapping to constant drivers).
+
+61. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+62. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \TopZeroToFive..
+Removed 0 unused cells and 139 unused wires.
+<suppressed ~2 debug messages>
+
+63. Executing INSBUF pass (insert buffer cells for connected wires).
+Add TopZeroToFive/$auto$insbuf.cc:97:execute$828: \seg [6] -> \seg [3]
+
+64. Executing CHECK pass (checking for obvious problems).
+Checking module TopZeroToFive...
+Found and reported 0 problems.
+
+65. Printing statistics.
+
+=== TopZeroToFive ===
+
+   Number of wires:                 91
+   Number of wire bits:            104
+   Number of public wires:          28
+   Number of public wire bits:      41
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                102
+     sky130_fd_sc_hd__a211o_2        1
+     sky130_fd_sc_hd__a21o_2         2
+     sky130_fd_sc_hd__a21oi_2        2
+     sky130_fd_sc_hd__a31o_2         1
+     sky130_fd_sc_hd__and2_2         5
+     sky130_fd_sc_hd__and2b_2        1
+     sky130_fd_sc_hd__and3_2         5
+     sky130_fd_sc_hd__and4_2         8
+     sky130_fd_sc_hd__buf_1          7
+     sky130_fd_sc_hd__buf_2          1
+     sky130_fd_sc_hd__conb_1         8
+     sky130_fd_sc_hd__dfrtp_2        4
+     sky130_fd_sc_hd__dfxtp_2       20
+     sky130_fd_sc_hd__inv_2          8
+     sky130_fd_sc_hd__nand2_2        1
+     sky130_fd_sc_hd__nand3_2        2
+     sky130_fd_sc_hd__nor2_2         4
+     sky130_fd_sc_hd__o21ai_2        2
+     sky130_fd_sc_hd__o21ba_2        5
+     sky130_fd_sc_hd__o31ai_2        1
+     sky130_fd_sc_hd__or2_2          1
+     sky130_fd_sc_hd__or3_2          2
+     sky130_fd_sc_hd__xnor2_2        3
+     sky130_fd_sc_hd__xor2_2         8
+
+   Chip area for module '\TopZeroToFive': 1171.123200
+
+66. Executing Verilog backend.
+Dumping module `\TopZeroToFive'.
+
+67. Executing JSON backend.
+
+End of script. Logfile hash: fea4f839f5, CPU: user 0.28s system 0.04s, MEM: 42.39 MB peak
+Yosys 0.38 (git sha1 543faed9c8c, clang++ 17.0.6 -fPIC -Os)
+Time spent: 28% 2x abc (0 sec), 25% 2x read_liberty (0 sec), ...

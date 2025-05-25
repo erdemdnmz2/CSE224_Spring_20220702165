@@ -1,0 +1,124 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= Typical Corner ===================================
+
+Startpoint: _133_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _149_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                  0.00    0.00    0.00 ^ _133_/CLK (sky130_fd_sc_hd__dfxtp_1)
+     4    0.02    0.17    0.38    0.38 ^ _133_/Q (sky130_fd_sc_hd__dfxtp_1)
+                                         div_cntr[1] (net)
+                  0.17    0.00    0.38 ^ _087_/B (sky130_fd_sc_hd__and4_1)
+     1    0.01    0.07    0.22    0.61 ^ _087_/X (sky130_fd_sc_hd__and4_1)
+                                         _053_ (net)
+                  0.07    0.00    0.61 ^ _088_/A (sky130_fd_sc_hd__buf_2)
+     7    0.03    0.14    0.19    0.79 ^ _088_/X (sky130_fd_sc_hd__buf_2)
+                                         _054_ (net)
+                  0.14    0.00    0.79 ^ _118_/A (sky130_fd_sc_hd__and4_2)
+     5    0.02    0.14    0.31    1.10 ^ _118_/X (sky130_fd_sc_hd__and4_2)
+                                         _037_ (net)
+                  0.14    0.00    1.10 ^ _121_/C (sky130_fd_sc_hd__nand3_2)
+     2    0.01    0.12    0.13    1.23 v _121_/Y (sky130_fd_sc_hd__nand3_2)
+                                         _038_ (net)
+                  0.12    0.00    1.23 v _123_/A (sky130_fd_sc_hd__and2_1)
+     1    0.01    0.05    0.18    1.41 v _123_/X (sky130_fd_sc_hd__and2_1)
+                                         _040_ (net)
+                  0.05    0.00    1.41 v _124_/A (sky130_fd_sc_hd__buf_1)
+     1    0.01    0.06    0.11    1.52 v _124_/X (sky130_fd_sc_hd__buf_1)
+                                         _012_ (net)
+                  0.06    0.00    1.52 v _149_/D (sky130_fd_sc_hd__dfxtp_1)
+                                  1.52   data arrival time
+
+                  0.00   10.00   10.00   clock clk (rise edge)
+                          0.00   10.00   clock network delay (ideal)
+                         -0.20    9.80   clock uncertainty
+                          0.00    9.80   clock reconvergence pessimism
+                                  9.80 ^ _149_/CLK (sky130_fd_sc_hd__dfxtp_1)
+                         -0.13    9.67   library setup time
+                                  9.67   data required time
+-----------------------------------------------------------------------------
+                                  9.67   data required time
+                                 -1.52   data arrival time
+-----------------------------------------------------------------------------
+                                  8.15   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= Typical Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= Typical Corner ===================================
+
+
+max slew violations count Typical: 0
+max fanout violations count Typical: 0
+max cap violations count Typical: 0
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 9 unannotated drivers.
+ clk
+ TopZeroToFive_10/LO
+ TopZeroToFive_11/LO
+ TopZeroToFive_12/LO
+ TopZeroToFive_13/LO
+ TopZeroToFive_14/LO
+ TopZeroToFive_15/LO
+ TopZeroToFive_16/LO
+ TopZeroToFive_9/HI
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 0
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There is 1 input port missing set_input_delay.
+  btnC
+Warning: There are 4 unclocked register/latch pins.
+  _152_/CLK
+  _153_/CLK
+  _154_/CLK
+  _155_/CLK
+Warning: There are 19 unconstrained endpoints.
+  an[0]
+  an[1]
+  an[2]
+  an[3]
+  an[4]
+  an[5]
+  an[6]
+  an[7]
+  seg[0]
+  seg[1]
+  seg[2]
+  seg[3]
+  seg[4]
+  seg[5]
+  seg[6]
+  _152_/D
+  _153_/D
+  _154_/D
+  _155_/D

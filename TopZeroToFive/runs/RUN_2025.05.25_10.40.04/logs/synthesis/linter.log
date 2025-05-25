@@ -1,0 +1,14 @@
+%Warning-EOFNEWLINE: /openlane/designs/TopZeroToFive/src/TopZeroToFive.v:17:10: Missing newline at end of file (POSIX 3.206).
+                                                                              : ... Suggest add newline.
+   17 | endmodule
+      |          ^
+                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=5.018
+                     ... Use "/* verilator lint_off EOFNEWLINE */" and lint_on around source to disable this message.
+%Warning-EOFNEWLINE: /openlane/designs/TopZeroToFive/src/SevenSegDecoder.v:15:10: Missing newline at end of file (POSIX 3.206).
+                                                                                : ... Suggest add newline.
+   15 | endmodule
+      |          ^
+%Warning-EOFNEWLINE: /openlane/designs/TopZeroToFive/src/ZeroToFiveCounter.v:14:10: Missing newline at end of file (POSIX 3.206).
+                                                                                  : ... Suggest add newline.
+   14 | endmodule
+      |          ^

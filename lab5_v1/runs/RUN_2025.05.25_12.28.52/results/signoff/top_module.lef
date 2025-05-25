@@ -1,0 +1,260 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO top_module
+  CLASS BLOCK ;
+  FOREIGN top_module ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 100.000 BY 100.000 ;
+  PIN BTNR
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 81.640 4.000 82.240 ;
+    END
+  END BTNR
+  PIN BTNU
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.159000 ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 49.000 4.000 49.600 ;
+    END
+  END BTNU
+  PIN CLK100MHZ
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.852000 ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 16.360 4.000 16.960 ;
+    END
+  END CLK100MHZ
+  PIN VGND
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met4 ;
+        RECT 19.115 10.640 20.715 87.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 41.310 10.640 42.910 87.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 63.505 10.640 65.105 87.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 85.700 10.640 87.300 87.280 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 22.900 94.540 24.500 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 41.940 94.540 43.540 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 60.980 94.540 62.580 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 80.020 94.540 81.620 ;
+    END
+  END VGND
+  PIN VPWR
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met4 ;
+        RECT 15.815 10.640 17.415 87.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 38.010 10.640 39.610 87.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 60.205 10.640 61.805 87.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 82.400 10.640 84.000 87.280 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 19.600 94.540 21.200 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 38.640 94.540 40.240 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 57.680 94.540 59.280 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 76.720 94.540 78.320 ;
+    END
+  END VPWR
+  PIN an[0]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 96.000 89.800 100.000 90.400 ;
+    END
+  END an[0]
+  PIN an[1]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 96.000 81.640 100.000 82.240 ;
+    END
+  END an[1]
+  PIN an[2]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 96.000 73.480 100.000 74.080 ;
+    END
+  END an[2]
+  PIN an[3]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 96.000 65.320 100.000 65.920 ;
+    END
+  END an[3]
+  PIN seg[0]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.340600 ;
+    PORT
+      LAYER met3 ;
+        RECT 96.000 57.160 100.000 57.760 ;
+    END
+  END seg[0]
+  PIN seg[1]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.340600 ;
+    PORT
+      LAYER met3 ;
+        RECT 96.000 49.000 100.000 49.600 ;
+    END
+  END seg[1]
+  PIN seg[2]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.340600 ;
+    PORT
+      LAYER met3 ;
+        RECT 96.000 40.840 100.000 41.440 ;
+    END
+  END seg[2]
+  PIN seg[3]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.340600 ;
+    PORT
+      LAYER met3 ;
+        RECT 96.000 32.680 100.000 33.280 ;
+    END
+  END seg[3]
+  PIN seg[4]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.340600 ;
+    PORT
+      LAYER met3 ;
+        RECT 96.000 24.520 100.000 25.120 ;
+    END
+  END seg[4]
+  PIN seg[5]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.340600 ;
+    PORT
+      LAYER met3 ;
+        RECT 96.000 16.360 100.000 16.960 ;
+    END
+  END seg[5]
+  PIN seg[6]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.340600 ;
+    PORT
+      LAYER met3 ;
+        RECT 96.000 8.200 100.000 8.800 ;
+    END
+  END seg[6]
+  OBS
+      LAYER nwell ;
+        RECT 5.330 10.795 94.490 87.125 ;
+      LAYER li1 ;
+        RECT 5.520 10.795 94.300 87.125 ;
+      LAYER met1 ;
+        RECT 2.370 9.900 97.910 90.060 ;
+      LAYER met2 ;
+        RECT 2.400 7.635 97.880 90.965 ;
+      LAYER met3 ;
+        RECT 2.110 90.800 97.455 90.945 ;
+        RECT 2.110 89.400 95.600 90.800 ;
+        RECT 2.110 82.640 97.455 89.400 ;
+        RECT 4.400 81.240 95.600 82.640 ;
+        RECT 2.110 74.480 97.455 81.240 ;
+        RECT 2.110 73.080 95.600 74.480 ;
+        RECT 2.110 66.320 97.455 73.080 ;
+        RECT 2.110 64.920 95.600 66.320 ;
+        RECT 2.110 58.160 97.455 64.920 ;
+        RECT 2.110 56.760 95.600 58.160 ;
+        RECT 2.110 50.000 97.455 56.760 ;
+        RECT 4.400 48.600 95.600 50.000 ;
+        RECT 2.110 41.840 97.455 48.600 ;
+        RECT 2.110 40.440 95.600 41.840 ;
+        RECT 2.110 33.680 97.455 40.440 ;
+        RECT 2.110 32.280 95.600 33.680 ;
+        RECT 2.110 25.520 97.455 32.280 ;
+        RECT 2.110 24.120 95.600 25.520 ;
+        RECT 2.110 17.360 97.455 24.120 ;
+        RECT 4.400 15.960 95.600 17.360 ;
+        RECT 2.110 9.200 97.455 15.960 ;
+        RECT 2.110 7.800 95.600 9.200 ;
+        RECT 2.110 7.655 97.455 7.800 ;
+      LAYER met4 ;
+        RECT 1.710 87.680 90.785 90.945 ;
+        RECT 1.710 10.240 15.415 87.680 ;
+        RECT 17.815 10.240 18.715 87.680 ;
+        RECT 21.115 10.240 37.610 87.680 ;
+        RECT 40.010 10.240 40.910 87.680 ;
+        RECT 43.310 10.240 59.805 87.680 ;
+        RECT 62.205 10.240 63.105 87.680 ;
+        RECT 65.505 10.240 82.000 87.680 ;
+        RECT 84.400 10.240 85.300 87.680 ;
+        RECT 87.700 10.240 90.785 87.680 ;
+        RECT 1.710 7.655 90.785 10.240 ;
+      LAYER met5 ;
+        RECT 1.500 64.180 89.580 70.500 ;
+        RECT 1.500 56.080 3.680 64.180 ;
+        RECT 1.500 45.140 89.580 56.080 ;
+        RECT 1.500 37.040 3.680 45.140 ;
+        RECT 1.500 26.100 89.580 37.040 ;
+        RECT 1.500 18.000 3.680 26.100 ;
+        RECT 1.500 14.500 89.580 18.000 ;
+  END
+END top_module
+END LIBRARY
+

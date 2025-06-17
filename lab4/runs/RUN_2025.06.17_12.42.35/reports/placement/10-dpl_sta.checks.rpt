@@ -1,0 +1,136 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= Typical Corner ===================================
+
+Startpoint: _1254_ (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: _1382_ (rising edge-triggered flip-flop clocked by core_clock)
+Path Group: core_clock
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock core_clock (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                  0.00    0.00    0.00 ^ _1254_/CLK (sky130_fd_sc_hd__dfxtp_4)
+     3    0.05    0.09    0.37    0.37 v _1254_/Q (sky130_fd_sc_hd__dfxtp_4)
+                                         Module2.RegisterFile[24][0] (net)
+                  0.09    0.01    0.38 v _1153_/A0 (sky130_fd_sc_hd__mux2_4)
+     1    0.04    0.10    0.35    0.73 v _1153_/X (sky130_fd_sc_hd__mux2_4)
+                                         _0536_ (net)
+                  0.10    0.01    0.74 v _1156_/A2 (sky130_fd_sc_hd__o221a_4)
+     1    0.04    0.09    0.33    1.07 v _1156_/X (sky130_fd_sc_hd__o221a_4)
+                                         _0539_ (net)
+                  0.09    0.01    1.08 v _1157_/B1 (sky130_fd_sc_hd__a21o_1)
+     1    0.02    0.09    0.23    1.31 v _1157_/X (sky130_fd_sc_hd__a21o_1)
+                                         _0540_ (net)
+                  0.09    0.00    1.31 v _1158_/A3 (sky130_fd_sc_hd__mux4_2)
+     1    0.05    0.19    0.63    1.94 v _1158_/X (sky130_fd_sc_hd__mux4_2)
+                                         _0541_ (net)
+                  0.19    0.01    1.95 v _1159_/A0 (sky130_fd_sc_hd__mux2_8)
+     1    0.06    0.10    0.41    2.37 v _1159_/X (sky130_fd_sc_hd__mux2_8)
+                                         _0542_ (net)
+                  0.11    0.02    2.39 v _1160_/A (sky130_fd_sc_hd__clkbuf_4)
+     1    0.04    0.10    0.22    2.61 v _1160_/X (sky130_fd_sc_hd__clkbuf_4)
+                                         _0132_ (net)
+                  0.10    0.01    2.63 v _1382_/D (sky130_fd_sc_hd__dfxtp_4)
+                                  2.63   data arrival time
+
+                  0.00   10.00   10.00   clock core_clock (rise edge)
+                          0.00   10.00   clock network delay (ideal)
+                          0.00   10.00   clock reconvergence pessimism
+                                 10.00 ^ _1382_/CLK (sky130_fd_sc_hd__dfxtp_4)
+                         -0.15    9.85   library setup time
+                                  9.85   data required time
+-----------------------------------------------------------------------------
+                                  9.85   data required time
+                                 -2.63   data arrival time
+-----------------------------------------------------------------------------
+                                  7.23   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= Typical Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= Typical Corner ===================================
+
+
+max slew violations count Typical: 0
+max fanout violations count Typical: 0
+max cap violations count Typical: 0
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 1 unannotated drivers.
+ clk
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 0
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There are 30 input ports missing set_input_delay.
+  A1[0]
+  A1[1]
+  A1[2]
+  A1[3]
+  A1[4]
+  A2[0]
+  A2[1]
+  A2[2]
+  A2[3]
+  A2[4]
+  A3[0]
+  A3[1]
+  A3[2]
+  A3[3]
+  A3[4]
+  WD3[0]
+  WD3[1]
+  WD3[2]
+  WD3[3]
+  WE3
+  inputA[0]
+  inputA[1]
+  inputA[2]
+  inputA[3]
+  inputB[0]
+  inputB[1]
+  inputB[2]
+  inputB[3]
+  opcode[0]
+  opcode[1]
+Warning: There are 16 unconstrained endpoints.
+  RD1[0]
+  RD1[1]
+  RD1[2]
+  RD1[3]
+  RD2[0]
+  RD2[1]
+  RD2[2]
+  RD2[3]
+  outputC[0]
+  outputC[1]
+  outputC[2]
+  outputC[3]
+  _1338_/D
+  _1339_/D
+  _1340_/D
+  _1341_/D
